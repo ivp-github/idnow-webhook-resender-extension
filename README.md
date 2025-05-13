@@ -1,31 +1,66 @@
-# IDnow Webhook Resender Extension
+# IDnow Webhook Resender (Chrome Extension)
 
-This Chrome extension automates the process of searching for Ident-IDs in the IDnow web platform, opening their detail view, and resending webhooks.
+This Chrome extension allows you to **automate the process** of opening Ident-IDs in the IDnow platform and triggering the “Resend Webhook” action.
+Ideal for support, operations, or compliance teams that regularly need to reprocess identifications.
+---
 
-## Features
+## ✅ Features
 
-- Paste Ident-IDs directly or upload a CSV file
-- Automatically clicks "view" and "resend webhook"
-- Works directly in the IDnow browser tab
-- Generates a summary report in the console
-- Retries failures once automatically
+- 📝 Paste Ident-IDs manually one per line.  
+- 🔄 Automatically searches and opens each ID  
+- ⚡ Clicks “Resend Webhook” for each ident  
+- 📊 Displays a full status report in the browser console
 
-## How to Use
+---
 
-1. Clone or download this repo
-2. Go to `chrome://extensions`
-3. Enable Developer Mode
-4. Click "Load unpacked" and select this folder
-5. Visit your IDnow dashboard
-6. Click the extension icon and:
-   - Paste Ident-IDs (one per line) **or**
-   - Upload a CSV file with Ident-IDs in the first column
-7. Click "Start Automation"
+## 🚀 How to Use
 
-## File Structure
+1. Go to your IDnow admin dashboard and log in.
+2. Go to search tab 
+3. Click the **extension icon** in Chrome.
+4. Paste your Ident-IDs 
+5. Click **“Start Automation”**.
+6. The extension will:
+   - Search for each ident
+   - Open it in a new tab
+   - Click the **“Resend Webhook”** button
+   - Close the tab and continue
+7. See the full report in your browser’s **DevTools console**.
 
-- `popup.html` — UI for user input
-- `popup.js` — Script logic and automation
-- `content.js` — Optional content script (currently empty)
-- `background.js` — Required placeholder for Manifest V3
-- `manifest.json` — Chrome extension config
+---
+
+## 🛠 Installation (Developer Mode)
+
+Until published, you can install the extension manually:
+1. Download or clone this repository.
+2. Open Chrome and go to: `chrome://extensions`
+3. Enable **Developer mode** (top right)
+4. Click **“Load unpacked”** and select the extracted folder.
+
+---
+
+## 📤 Publishing
+
+Once zipped, this extension can be uploaded to the [Chrome Web Store](https://chrome.google.com/webstore/devconsole) to be shared internally or publicly.
+
+---
+
+## 🔐 Privacy & Permissions
+
+This extension:
+- Only runs scripts on the **active tab** when triggered by the user
+- Does **not store**, transmit, or track any data
+- Uses only browser-local scripting
+
+---
+
+## 🤝 Contributing
+
+Feel free to submit issues or pull requests.  
+If you have improvements (e.g., parallel processing, retries, dashboard logs), we welcome your ideas.
+
+---
+
+## 📄 License
+
+MIT – free to use, share, and adapt.
