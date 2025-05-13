@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IDnow Webhook Resender</title>
+  <style>
+    body { font-family: sans-serif; width: 300px; padding: 10px; }
+    textarea { width: 100%; height: 150px; }
+    button { width: 100%; padding: 10px; margin-top: 10px; }
+    input[type='file'] { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h3>Paste Ident-IDs:</h3>
+  <textarea id="idents" placeholder="One per line..."></textarea>
+  <input type="file" id="csv" accept=".csv">
+  <button id="run">Start Automation</button>
+  <script src="popup.js"></script>
+</body>
+</html>
