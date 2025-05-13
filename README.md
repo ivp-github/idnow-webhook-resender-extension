@@ -1,7 +1,7 @@
 # IDnow Webhook Resender (Chrome Extension)
 
-This Chrome extension allows you to **automate the process** of opening Ident-IDs in the IDnow platform and triggering the “Resend Webhook” action.
-Ideal for support, operations, or compliance teams that regularly need to reprocess identifications.
+
+This Chrome extension allows you to **automate the process** of opening Ident-IDs in the IDnow platform and triggering the “Resend Webhook” action. Ideal for support, operations, or compliance teams that regularly need to reprocess identifications.
 ---
 
 ## ✅ Features
