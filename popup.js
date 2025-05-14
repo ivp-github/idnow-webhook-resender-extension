@@ -94,10 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         await new Promise(resolve => {
+          let retries = 0;
           const interval = setInterval(async () => {
             try {
               const resend = [...newTab.document.querySelectorAll("button.btn-warning")]
                 .find(btn => btn.innerText.toLowerCase().includes("resend"));
+
               if (resend) {
                 resend.click();
                 report.push({ ident, status: "webhook resent" });
@@ -105,8 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 await delay(500);
                 newTab.close();
                 resolve();
+              } else if (retries++ >= 10) {
+                report.push({ ident, status: "no webhook available" });
+                console.warn(`⚠️ No webhook button for ${ident}`);
+                clearInterval(interval);
+                await delay(500);
+                newTab.close();
+                resolve();
               }
-            } catch {}
+            } catch {
+              // Tab still loading or blocked — ignore and retry
+            }
           }, 300);
         });
 
